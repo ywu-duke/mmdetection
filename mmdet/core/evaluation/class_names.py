@@ -2,6 +2,10 @@
 import mmcv
 
 
+def uavdt_classes():
+    return ['vehicle']
+
+
 def wider_face_classes():
     return ['face']
 
@@ -455,7 +459,8 @@ dataset_aliases = {
     'oid_challenge': ['oid_challenge', 'openimages_challenge'],
     'oid_v6': ['oid_v6', 'openimages_v6'],
     'objects365v1': ['objects365v1', 'obj365v1'],
-    'objects365v2': ['objects365v2', 'obj365v2']
+    'objects365v2': ['objects365v2', 'obj365v2'],
+    'uavdt': ['uavdt']
 }
 
 
