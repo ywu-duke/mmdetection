@@ -98,7 +98,11 @@ class UAVDTEval(_COCOeval):
                                   dt['bbox'][1], 
                                   dt['bbox'][2] + dt['bbox'][0], 
                                   dt['bbox'][3] + dt['bbox'][1], dt['score']])
-                
+
+            # If there is no prediction, add an all-zero list
+            if not bboxes_dt:
+                bboxes_dt.append([0, 0, 0, 0, 0])
+
             img_gt['bboxes'] = np.array(bboxes_gt)
             img_gt['labels'] = np.array(cats_gt)
 
