@@ -118,7 +118,7 @@ class UAVDTEval(_COCOeval):
 
             gts_voc[img] = img_gt
             dts_voc[img] = np.array([bboxes_dt,])
-        
+
         annotations = list(gts_voc.values())
         results = list(dts_voc.values())
 
@@ -173,9 +173,8 @@ class UAVDTEval(_COCOeval):
                     eval_results[f'AR@{num}'] = ar[i]
         return eval_results
 
-
-
-coco.COCOeval = UAVDTEval
+# Uncomment to enable UAVDT evaluation
+# coco.COCOeval = UAVDTEval
 
 @DATASETS.register_module()
 class UavdtDataset(coco.CocoDataset):
